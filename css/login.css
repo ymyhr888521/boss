@@ -1,0 +1,253 @@
+
+
+.all{
+	display: flex;
+	flex-direction: column;
+	height:100%;
+	padding:0 .36rem;
+}
+
+.all header{
+	margin-top:.56rem;
+}
+.all header h1{
+	font-size:.39rem ;
+	padding:.49rem 0;
+	font-weight: 100;
+}
+
+
+
+.all main{
+	flex: 1;
+	overflow: auto;
+
+}
+.all main .phone-write{
+	height:.88rem;
+	display: flex;
+	align-items: center;
+	border-bottom:1px solid #ccc;
+	margin-bottom: .48rem;
+	position: relative;
+}
+.all main .phone-write span:nth-of-type(1){
+	width:.62rem;
+	background: url(../img/bottom.png) no-repeat right center;
+	background-size: .16rem auto;
+}
+
+.all main .phone-write span:nth-of-type(2){
+	position:absolute;
+	left:0;
+	top:0.88rem;
+	height:.48rem;
+	line-height:.48rem;
+	color:#ca0c16;
+	display: none;
+	font-size:.18rem;
+	text-align: center;
+}
+
+
+
+.all main .phone-write input{
+	margin-left:.2rem;
+	width:2.5rem;
+	height:.23rem;
+	border:0;
+	font-size:.23rem;
+}
+
+.all main .btn{
+	height:.67rem;
+}
+.all main .btn input{
+	height:100%;
+	background:#999;
+	width:100%;
+	font-size:.23rem;
+	color:#fff;
+}
+.all main .login-each-other{
+	margin:.33rem 0;
+}
+
+.all main .login-each-other a{
+	color:#444;
+}
+
+
+
+
+
+/*----------------------------------footer--------------------------------------*/
+
+.all footer{
+	height:2.48rem;
+	margin-bottom: .25rem;
+}
+.all footer div{
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+.all footer div h3{
+	font-weight: 100;
+	font-size: .2rem;
+	padding: .18rem 0;
+	text-align: center;
+
+}
+
+.all footer div img{
+	width:.9rem;
+	height:.9rem;
+	border-radius: 50%;
+
+
+}
+.all footer div p{
+	font-size:.16rem;
+	padding:.42rem 0;
+	color:#aaa;
+
+}
+.all footer div p a{
+	color:#333;
+}
+
+
+
+
+
+
+
+/*----------------------------------all-copy---------------------------------*/
+
+.all-copy{
+	display: flex;
+	flex-direction: column;
+	height:100%;
+	padding:0 .36rem;
+	display: none;
+}
+
+.all-copy header{
+	padding-top:.56rem;
+	background: url(../img/left.png) no-repeat left .25rem;
+	background-size: .13rem auto;
+}
+.all-copy header h1{
+	font-size:.39rem ;
+	padding:.49rem 0;
+	font-weight: 100;
+}
+
+
+
+
+.all-copy main{
+	flex: 1;
+	overflow: auto;
+}
+.all-copy main .phone-write{
+	height:.88rem;
+	display: flex;
+	align-items: center;
+	border-bottom:1px solid #ccc;
+}
+
+.all-copy main .phone-write span{
+	width:.62rem;
+	background: url(../img/bottom.png) no-repeat right center;
+	background-size: .16rem auto;
+}
+.all-copy main .phone-write input{
+	margin-left:.2rem;
+	width:2.5rem;
+	height:.23rem;
+	border:0;
+	font-size:.23rem;
+}
+
+
+
+.all-copy main .password-num{
+	height:1rem;
+	display: flex;
+	align-items: center;
+	border-bottom:1px solid #ccc;
+	margin-bottom: .24rem;
+	position: relative;
+
+}
+.all-copy main .password-num input{
+	font-size:.2rem;
+	color:#999;
+}
+.all-copy main .password-num  span{
+	background: url(../img/pass1.png) no-repeat right center;
+	background-size:.27rem .2rem;
+	display: block;
+	width: .27rem;
+	height:.2rem;
+	position: absolute;
+	right:0;
+}
+
+
+.all-copy main .btn{
+	height:.67rem;
+}
+.all-copy main .btn input{
+	height:100%;
+	background:#999;
+	width:100%;
+	font-size:.23rem;
+	color:#fff;
+}
+.all-copy main .login-each-other{
+	padding:.33rem 0;
+}
+
+.all-copy main .login-each-other p{
+	display: flex;
+}
+.all-copy main .login-each-other p a{
+	flex:1;
+	color:#444;
+}
+.all-copy main .login-each-other p a:nth-of-type(2){
+	text-align: right;
+	color:#66CCCC;
+}
+
+
+/*----------------------------------footer--------------------------------------*/
+
+.all-copy footer{
+	height:2.48rem;
+}
+.all-copy footer div{
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+.all-copy footer div h3{
+	font-weight: 100;
+	font-size: .2rem;
+	padding: .18rem 0;
+	text-align: center;
+
+}
+
+.all-copy footer div img{
+	width:.9rem;
+	height:.9rem;
+	border-radius: 50%;
+
+}
+

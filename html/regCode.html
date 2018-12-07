@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="../css/public.css" />
+	<link rel="stylesheet" href="../css/regCode.css"/>
+	<body>
+		<div class="all">
+			<header>
+				<a href="login.html">< 返回</a>
+				<h1>输入短信验证码</h1>
+				<p>已向您的手机<span> 6923 </span>发送验证码</p>
+			</header>
+
+			<main>
+				<div>
+					<ul class="code-four">
+						<li><span><input type="text"  maxlength="1"/></span></li>
+						<li><span><input type="text"   maxlength="1"/></span></li>
+						<li><span><input type="text"  maxlength="1" /></span></li>
+						<li><span><input type="text"   maxlength="1"/></span></li>
+					</ul>
+				</div>
+
+				<div>
+					<p><a class='receive' href="#">重新发送 </a>  (<span class="seconds">60</span>s)</p>
+				</div>
+
+				<div>
+					<input type="submit" value='下一步' />
+				</div>
+
+				<div>
+					<a href="#">语音接听验证码</a>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+window.onload = function(){
+	seconds();
+	$('.receive').click(function(){
+		let num = parseInt( $('.seconds').html(60) );
+		seconds();
+	});
+
+	codeReg();
+
+
+
+
+}
+
+
+	function codeReg(){
+		$('.code-four li input').each(function(){
+			$(this).keydown(function(e){
+				if( $(this).val().length >=1 ){
+					$(this).parents('li').next().find('input').focus();
+				}else{
+					if(e.keyCode == 8){
+						$(this).html('');
+						$(this).parents('li').prev().find('input').focus();
+					}
+				}
+			});
+		})
+	}
+
+
+	let timer = null;
+	function seconds(){
+		if(timer != null){
+			return;
+		}
+		let num = parseInt( $('.seconds').html() );
+			 timer = setInterval(function(){
+				num--;
+				$('.seconds').html(num);
+				if(num <= 0){
+					num = 0;
+					clearInterval(timer);
+					timer = null;
+				}
+			},200);
+		}
+
+</script>

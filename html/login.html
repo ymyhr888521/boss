@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<link rel="stylesheet" href="../css/public.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="all">
+			<header>
+				<h1>输入手机号</h1>
+			</header>
+			<main>
+
+				<div class="phone-write">
+					<span>+86</span>
+					<input type="text" placeholder="请输入您的手机号码"  class="input"/>
+					<span class="show"></span>
+				</div>
+
+				<div class="btn">
+					<input type="submit" value="下一步" />
+				</div>
+
+				<div class="login-each-other">
+					<p><a href="#" class="to-Phone">账户密码登录</a></p>
+				</div>
+			</main>
+			<footer>
+				<div>
+					<h3>微信登录</h3>
+						<img src="../img/wechat.png"/>
+					<p>点击"下一步",即表示你同意  <a href="#">  用户协议及隐私策略</a></p>
+				</div>
+			</footer>
+		</div>
+
+
+
+		<div class="all-copy">
+			<header>
+				<h1>账号登录</h1>
+			</header>
+			<main>
+				<div class="phone-write">
+					<span>+86</span>
+					<input type="text" placeholder="请输入您的手机号码" id='phone'/>
+				</div>
+
+
+				<div class="password-num">
+					<input type="password" class="password" id='passid' placeholder="请输入密码" />
+					<span class="icon"></span>
+				</div>
+
+
+				<div class="btn">
+					<input type="submit" value="登录" id='login' />
+				</div>
+
+				<div class="login-each-other">
+					<p>
+						<a href="#" class="pass-num-login">账户密码登录</a>
+						<a href="#">忘记密码</a>
+					</p>
+				</div>
+			</main>
+			<footer>
+				<div>
+					<h3>微信登录</h3>
+						<img src="../img/wechat.png"/>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+$(function(){
+//短信验证码输入
+	$(".to-Phone").click(function(){
+		$(this).parents(".all").css({"display":"none"});
+		$(".all-copy").css({'display':'flex'});
+
+	});
+
+//账号密码输入
+	$(".pass-num-login").click(function(){
+		$(this).parents(".all-copy").css({"display":"none"});
+		$(".all").css({'display':'flex'});
+	});
+
+
+//输入密码时，是否设置为可见或者隐藏
+	$(".icon").toggle(
+		function(){
+			$(this).css({'background-image':'url(../img/pass2.png)'});
+			$('.password')[0].type = "text";
+		},
+		function(){
+			$(this).css({'background-image':'url(../img/pass1.png)'});
+			$('.password')[0].type = "password";
+		});
+
+
+//手机号码的正则验证
+	$(".input").keyup(function(){
+		let $username = $(this).val();
+		let regPhoneNum = /^1[34578]\d{9}$/;
+		let len = $username.length;
+		if (len > 0) {
+			$(this).parent().siblings('.btn').children().css('background', '#66CCCC');
+		} else {
+			$(this).parent().siblings('.btn').children().css('background', '#999');
+		}
+
+		if(len == 0){
+			$(this).next().css({'display':'block'}).html('* 请输入手机号码');
+		}else if( regPhoneNum.test($username) ){
+			$(this).next().css({'display':'block'}).css('color','#66CCCC').html('* 手机号码验证通过，请下一步操作');
+			$(this).parent('.phone-write').siblings('.btn').children().css('background','#66CCCC');
+			$(this).parent('.phone-write').siblings('.btn').click(function(){
+				location.href = 'regCode.html';
+			})
+		}else{
+			$(this).next().css({'display':'block'}).html('* 请输入正确的手机号码')
+		}
+	});
+
+
+	$('#phone,#passid').keyup(function(){
+		if (($("#phone").val().length >= 11) && ($('#passid').val().length > 0)) {
+			$('#login').css({ 'background': '#66CCCC' });
+		}else{
+			$('#login').css({ 'background': '#999' });
+		}
+	});
+
+
+
+
+
+
+});
+
+
+</script>

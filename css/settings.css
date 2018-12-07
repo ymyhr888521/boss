@@ -1,0 +1,87 @@
+
+.all{
+	display: flex;
+	flex-direction: column;
+	height:100%;
+	background:#eee;
+}
+/*--------------------header ---------------------*/
+header div{
+	padding:.26rem 0;
+	text-align: center;
+	font-weight: 600;
+	font-size: .21rem;
+	color:#000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-bottom: 1px solid #C8C8C8;
+	background-color:#fff ;
+}
+header div span{
+	background:url(../img/left.png) no-repeat;
+	background-size:.13rem .24rem;
+	display: block;
+	width:.13rem;
+	height:.24rem;
+	position: absolute;
+	left:.36rem;
+	top:.26rem;
+}
+
+main{
+	flex:1;
+	overflow: auto;
+
+}
+
+main section div{
+	width:100%;
+	display: flex;
+	position:relative;
+	border-bottom: 1px solid #ccc;
+	align-items: center;
+	background: #fff;
+	padding:.21rem .24rem;
+
+}
+
+main section div span{
+	font-size: .2rem;
+	color:#000;
+}
+main section div span:nth-of-type(3){
+	position:absolute;
+	right:.24rem;
+	color:#66CCCC;
+
+}
+main section div span:nth-of-type(2){
+	position:absolute;
+	right:.44rem;
+	color:#666;
+	font-size: .18rem;
+}
+main section div:nth-of-type(3n+1){
+	margin-top:.12rem;
+}
+
+main section div:nth-of-type(3n+3){
+	border:0;
+}
+
+main section div:last-of-type{
+	padding:0;
+	margin-top:.12rem;
+	border:0;
+	border-top:1px solid #f9f9f9;
+
+}
+main section div:last-of-type input{
+	width:100%;
+	text-align: center;
+	padding:.21rem 0;
+	background: #fff;
+	color:#cc6666;
+}
